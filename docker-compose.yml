@@ -1,9 +1,6 @@
-version: '3'
 services:
   mysql:
     image: mysql:8.0
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
       MYSQL_USER: product_user
@@ -19,7 +16,7 @@ services:
       depends_on:
         - mysql
       environment:
-        SPRING_DATASOURCE_URL: jdbc:mysql://13.233.232.244:3306/product
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/product  # Use service name as hostname
         SPRING_DATASOURCE_USERNAME: aditya
         SPRING_DATASOURCE_PASSWORD: test
 
